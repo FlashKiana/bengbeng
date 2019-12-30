@@ -1,0 +1,6 @@
+D:\CoolQ\崩崩小助手\Native.Csharp.Sdk\bin\x86\Debug\Native.Csharp.Sdk.xml
+D:\CoolQ\崩崩小助手\Native.Csharp.Sdk\bin\x86\Debug\Native.Csharp.Sdk.dll
+D:\CoolQ\崩崩小助手\Native.Csharp.Sdk\bin\x86\Debug\Native.Csharp.Sdk.pdb
+D:\CoolQ\崩崩小助手\Native.Csharp.Sdk\obj\x86\Debug\Native.Csharp.Sdk.dll
+D:\CoolQ\崩崩小助手\Native.Csharp.Sdk\obj\x86\Debug\Native.Csharp.Sdk.pdb
+D:\CoolQ\崩崩小助手\Native.Csharp.Sdk\obj\x86\Debug\Native.Csharp.Sdk.csprojAssemblyReference.cache

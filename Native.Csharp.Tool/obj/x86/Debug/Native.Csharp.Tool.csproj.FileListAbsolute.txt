@@ -1,0 +1,8 @@
+D:\CoolQ\崩崩小助手\Native.Csharp.Tool\bin\x86\Debug\Native.Csharp.Tool.xml
+D:\CoolQ\崩崩小助手\Native.Csharp.Tool\bin\x86\Debug\Native.Csharp.Tool.dll
+D:\CoolQ\崩崩小助手\Native.Csharp.Tool\bin\x86\Debug\Native.Csharp.Tool.pdb
+D:\CoolQ\崩崩小助手\Native.Csharp.Tool\obj\x86\Debug\Native.Csharp.Tool.SQLite.Resources.SR.resources
+D:\CoolQ\崩崩小助手\Native.Csharp.Tool\obj\x86\Debug\Native.Csharp.Tool.csproj.GenerateResource.cache
+D:\CoolQ\崩崩小助手\Native.Csharp.Tool\obj\x86\Debug\Native.Csharp.Tool.dll
+D:\CoolQ\崩崩小助手\Native.Csharp.Tool\obj\x86\Debug\Native.Csharp.Tool.pdb
+D:\CoolQ\崩崩小助手\Native.Csharp.Tool\obj\x86\Debug\Native.Csharp.Tool.csprojAssemblyReference.cache

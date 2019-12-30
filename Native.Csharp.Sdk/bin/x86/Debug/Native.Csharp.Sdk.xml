@@ -1,0 +1,1139 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Native.Csharp.Sdk</name>
+    </assembly>
+    <members>
+        <member name="T:Native.Csharp.Sdk.Cqp.CqApi">
+            <summary>
+            酷Q Api封装类
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.CqApi.AuthCode">
+            <summary>
+            获取或设置该实例的验证码
+            </summary>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.#ctor(System.Int32)">
+            <summary>
+            初始化一个 <see cref="T:Native.Csharp.Sdk.Cqp.CqApi"/> 类的新实例, 该实例将由 <code>Initialize (int)</code> 函数授权
+            </summary>
+            <param name="authCode">插件验证码</param>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.CqCode_At(System.Int64,System.Boolean)">
+            <summary>
+            获取酷Q "At某人" 代码
+            </summary>
+            <param name="qqId">QQ号, 填写 -1 为At全体成员</param>
+            <param name="addSpacing">默认为True, At后添加空格, 可使At更规范美观. 如果不需要添加空格, 请置本参数为False</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.CqCode_Emoji(System.Int32)">
+            <summary>
+            获取酷Q "emoji表情" 代码
+            </summary>
+            <param name="id">表情Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.CqCode_Face(Native.Csharp.Sdk.Cqp.Enum.Face)">
+            <summary>
+            获取酷Q "表情" 代码
+            </summary>
+            <param name="face">表情枚举</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.CqCode_Shake">
+            <summary>
+            获取酷Q "窗口抖动" 代码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.CqCode_Trope(System.String,System.Boolean)">
+            <summary>
+            获取字符串的转义形式
+            </summary>
+            <param name="str">欲转义字符串</param>
+            <param name="commaTrope">逗号转义, 默认: False</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.CqCode_UnTrope(System.String)">
+            <summary>
+            获取字符串的非转义形式
+            </summary>
+            <param name="str">欲反转义字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.CqCode_ShareLink(System.String,System.String,System.String,System.String)">
+            <summary>
+            获取酷Q "链接分享" 代码
+            </summary>
+            <param name="url">分享链接</param>
+            <param name="title">分享的标题, 建议12字以内</param>
+            <param name="content">分享的简介, 建议30字以内</param>
+            <param name="imgUrl">分享的图片链接, 留空则为默认图片</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.CqCode_ShareCard(System.String,System.Int64)">
+            <summary>
+            获取酷Q "名片分享" 代码
+            </summary>
+            <param name="cardType">名片类型, qq: 好友分享, group: 群分享</param>
+            <param name="id">类型为qq，则为qqId；类型为group，则为groupId</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.CqCode_ShareGPS(System.String,System.String,System.Double,System.Double,System.Int32)">
+            <summary>
+            获取酷Q "位置分享" 代码
+            </summary>
+            <param name="site">地点名称, 建议12字以内</param>
+            <param name="detail">详细地址, 建议20字以内</param>
+            <param name="lat">维度</param>
+            <param name="lon">经度</param>
+            <param name="zoom">放大倍数, 默认: 15</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.CqCode_Anonymous(System.Boolean)">
+            <summary>
+            获取酷Q "匿名" 代码
+            </summary>
+            <param name="forced">强制发送
+            <para>默认为False 如果希望匿名失败时，将消息转为普通消息发送(而不是取消发送)，请置本参数为True。</para></param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.CqCode_Image(System.String)">
+            <summary>
+            获取酷Q "图片" 代码
+            </summary>
+            <param name="filePath">图片路径
+            <para>将图片放在 data\image 下，并填写相对路径。如 data\image\1.jpg 则填写 1.jpg</para></param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.CqCode_Music(System.Int64,System.String,System.Boolean)">
+            <summary>
+            获取酷Q "音乐" 代码
+            </summary>
+            <param name="id">歌曲ID</param>
+            <param name="type">歌曲来源, 目前支持 qq/QQ音乐 163/网易云音乐 xiami/虾米音乐，默认为qq</param>
+            <param name="newStyle">启用新样式, 目前仅支持 QQ音乐 </param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.CqCode_MusciDIY(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            获取酷Q "音乐自定义" 代码
+            </summary>
+            <param name="url">分享链接, 点击分享后进入的音乐页面（如歌曲介绍页）</param>
+            <param name="musicUrl">歌曲链接, 音乐的音频链接（如mp3链接）</param>
+            <param name="title">音乐的标题，建议12字以内</param>
+            <param name="content">音乐的简介，建议30字以内</param>
+            <param name="imgUrl">音乐的封面图片链接，留空则为默认图片</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.CqCode_Record(System.String)">
+            <summary>
+            获取酷Q "语音" 代码
+            </summary>
+            <param name="filePath">语音路径
+            <para>将语音放在 data\record 下，并填写相对路径。如 data\record\1.amr 则填写 1.amr</para></param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.SendGroupMessage(System.Int64,System.String)">
+            <summary>
+            发送群消息
+            </summary>
+            <param name="groupId">目标群</param>
+            <param name="message">消息内容</param>
+            <returns>失败返回负值, 成功返回消息 Id</returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.SendPrivateMessage(System.Int64,System.String)">
+            <summary>
+            发送私聊消息
+            </summary>
+            <param name="qqId">目标QQ</param>
+            <param name="message">消息内容</param>
+            <returns>失败返回负值, 成功返回消息 Id</returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.SendDiscussMessage(System.Int64,System.String)">
+            <summary>
+            发送讨论组消息
+            </summary>
+            <param name="discussId">目标讨论组</param>
+            <param name="message">消息内容</param>
+            <returns>失败返回负值, 成功返回消息 Id</returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.SendPraise(System.Int64,System.Int32)">
+            <summary>
+            发送赞
+            </summary>
+            <param name="qqId">目标QQ</param>
+            <param name="count">赞的次数，最多10次（留空为1次）</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.ReceiveRecord(System.String,Native.Csharp.Sdk.Cqp.Enum.AudioOutFormat)">
+            <summary>
+            接收消息中的语音 (含有CQ码 "record" 的消息)
+            </summary>
+            <param name="fileName">文件名, 收到消息中的语音文件名(file)</param>
+            <param name="formatType">应用所需的语音文件格式</param>
+            <returns>返回语音文件绝对路径</returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.ReceiveImage(System.String)">
+            <summary>
+            接收消息中的图片 (含有CQ码 "image" 的消息)
+            </summary>
+            <param name="fileName"></param>
+            <returns>返回图片文件绝对路径</returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.RepealMessage(System.Int32)">
+            <summary>
+            撤回消息
+            </summary>
+            <param name="id">消息ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.GetLoginQQ">
+            <summary>
+            取登录QQ
+            </summary>
+            <returns>返回整数</returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.GetLoginNick">
+            <summary>
+            获取当前登录QQ的昵称
+            </summary>
+            <returns>返回 GB108030 编码的字符串</returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.GetAppDirectory">
+            <summary>
+            取应用目录
+            </summary>
+            <returns>返回本地路径字符串</returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.GetCookies">
+            <summary>
+            获取 Cookies 慎用,此接口需要严格授权
+            </summary>
+            <returns>返回 Cookies 字符串</returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.GetCsrfToken">
+            <summary>
+            即QQ网页用到的bkn/g_tk等 慎用,此接口需要严格授权
+            </summary>
+            <returns>返回 bkn/g_tk 字符串</returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.GetQQInfo(System.Int64,System.Boolean)">
+            <summary>
+            获取QQ信息
+            </summary>
+            <param name="qqId">目标QQ</param>
+            <param name="notCache">不使用缓存, 默认为"False"，通常忽略本参数，仅在必要时使用</param>
+            <returns>获取成功返回 <see cref="T:Native.Csharp.Sdk.Cqp.Model.QQInfo"/>, 失败返回 null</returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.GetMemberInfo(System.Int64,System.Int64,System.Boolean)">
+            <summary>
+            获取群成员信息
+            </summary>
+            <param name="groupId">目标群</param>
+            <param name="qqId">目标QQ</param>
+            <param name="notCache">默认为 "Flase", 通常忽略本参数, 仅在必要的是否使用</param>
+            <returns>获取成功返回 <see cref="T:Native.Csharp.Sdk.Cqp.Model.GroupMember"/>, 失败返回 null</returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.GetMemberList(System.Int64)">
+            <summary>
+            获取群成员列表
+            </summary>
+            <param name="groupId">目标群</param>
+            <returns>获取成功返回 <see cref="T:System.Collections.Generic.List`1"/>, 失败返回 null</returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.GetGroupList">
+            <summary>
+            获取群列表
+            </summary>
+            <returns>获取成功返回 <see cref="T:System.Collections.Generic.List`1"/>, 失败返回 null</returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.GetSendRecordSupport">
+            <summary>
+            获取发送语音支持
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.GetSendImageSupport">
+            <summary>
+            获取发送图片支持
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.AddLoger(Native.Csharp.Sdk.Cqp.Enum.LogerLevel,System.String,System.String)">
+            <summary>
+            添加日志
+            </summary>
+            <param name="level">级别</param>
+            <param name="type">类型</param>
+            <param name="content">内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.AddFatalError(System.String)">
+            <summary>
+            添加致命错误提示
+            </summary>
+            <param name="message">错误信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.SetFriendAddRequest(System.String,Native.Csharp.Sdk.Cqp.Enum.ResponseType,System.String)">
+            <summary>
+            置好友添加请求
+            </summary>
+            <param name="tag">请求反馈标识</param>
+            <param name="response">反馈类型</param>
+            <param name="notes">备注</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.SetGroupAddRequest(System.String,Native.Csharp.Sdk.Cqp.Enum.RequestType,Native.Csharp.Sdk.Cqp.Enum.ResponseType,System.String)">
+            <summary>
+            置群添加请求
+            </summary>
+            <param name="tag">请求反馈标识</param>
+            <param name="request">请求类型</param>
+            <param name="response">反馈类型</param>
+            <param name="appendMsg">备注</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.SetGroupAnonymousBanSpeak(System.Int64,System.String,System.TimeSpan)">
+            <summary>
+            置匿名群员禁言
+            </summary>
+            <param name="groupId">目标群</param>
+            <param name="anonymous">匿名参数</param>
+            <param name="time">禁言时间, 单位: 秒, 不支持解禁</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.SetGroupBanSpeak(System.Int64,System.Int64,System.TimeSpan)">
+            <summary>
+            置群员禁言
+            </summary>
+            <param name="groupId">目标群</param>
+            <param name="qqId">目标QQ</param>
+            <param name="time">禁言的时间，单位为秒。如果要解禁，请给TimeSpan.Zero</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.SetGroupWholeBanSpeak(System.Int64,System.Boolean)">
+            <summary>
+            置全群禁言
+            </summary>
+            <param name="groupId">目标群</param>
+            <param name="isOpen">是否开启</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.SetGroupMemberNewCard(System.Int64,System.Int64,System.String)">
+            <summary>
+            置群成员名片
+            </summary>
+            <param name="groupId">目标群</param>
+            <param name="qqId">目标QQ</param>
+            <param name="newNick">新昵称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.SetGroupSpecialTitle(System.Int64,System.Int64,System.String,System.TimeSpan)">
+            <summary>
+            置群成员专属头衔
+            </summary>
+            <param name="groupId">目标群</param>
+            <param name="qqId">目标QQ</param>
+            <param name="specialTitle">如果要删除，这里填空</param>
+            <param name="time">专属头衔有效期，单位为秒。如果永久有效，time填写负数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.SetGroupManager(System.Int64,System.Int64,System.Boolean)">
+            <summary>
+            置群管理员
+            </summary>
+            <param name="groupId">目标群</param>
+            <param name="qqId">目标QQ</param>
+            <param name="isCalcel">True: 设置管理员, False: 取消管理员</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.SetAnonymousStatus(System.Int64,System.Boolean)">
+            <summary>
+            置群匿名设置
+            </summary>
+            <param name="groupId">目标群</param>
+            <param name="isOpen">是否打开</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.SetGroupExit(System.Int64,System.Boolean)">
+            <summary>
+            置群退出 慎用,此接口需要严格授权
+            </summary>
+            <param name="groupId">目标群</param>
+            <param name="dissolve">默认为False, True: 解散本群(群主) False: 退出本群(管理、群成员)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.SetGroupMemberRemove(System.Int64,System.Int64,System.Boolean)">
+            <summary>
+            置群员移除
+            </summary>
+            <param name="groupId">目标群</param>
+            <param name="qqId">目标QQ</param>
+            <param name="notAccept">如果为True，则“不再接收此人加群申请”，请慎用。留空为False</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.SetDiscussExit(System.Int64)">
+            <summary>
+            置讨论组退出
+            </summary>
+            <param name="discussId">目标讨论组</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.SetAuthCode(System.Int32)">
+            <summary>
+            设置App验证码
+            </summary>
+            <param name="authCode"></param>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.GetAuthCode">
+            <summary>
+            获取App验证码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.GetAnonymous(System.String)">
+            <summary>
+            获取匿名信息
+            </summary>
+            <param name="source">匿名参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.GetFile(System.String)">
+            <summary>
+            获取群文件
+            </summary>
+            <param name="source">群文件参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqApi.FormatStringFloatWindow(Native.Csharp.Sdk.Cqp.Model.FloatWindow)">
+            <summary>
+            编码悬浮窗数据置文本
+            </summary>
+            <param name="floatWindow"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Native.Csharp.Sdk.Cqp.CqMsg">
+            <summary>
+            消息解析
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.CqMsg.OriginalString">
+            <summary>
+            获取一个值, 该值是构造函数传入的原始值
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.CqMsg.Contents">
+            <summary>
+            获取本条消息中所有解析出的特殊内容
+            </summary>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.CqMsg.Parse(System.String)">
+            <summary>
+            将所获取的消息内容序列化为 <see cref="T:Native.Csharp.Sdk.Cqp.CqMsg"/> 对象
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Native.Csharp.Sdk.Cqp.Enum.AudioOutFormat">
+            <summary>
+            指示酷Q接收语音时的转换格式
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.AudioOutFormat.MPEG_Layer3">
+            <summary>
+            mp3音频格式
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.AudioOutFormat.AMR_NB">
+            <summary>
+            arm音频格式
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.AudioOutFormat.Windows_Media_Audio">
+            <summary>
+            wma音频格式
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.AudioOutFormat.MPEG4">
+            <summary>
+            m4a音频格式
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.AudioOutFormat.Speex">
+            <summary>
+            spx音频格式
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.AudioOutFormat.OggVorbis">
+            <summary>
+            ogg音频格式
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.AudioOutFormat.WAVE">
+            <summary>
+            wav音频格式
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.AudioOutFormat.FLAC">
+            <summary>
+            flac音频格式
+            </summary>
+        </member>
+        <member name="T:Native.Csharp.Sdk.Cqp.Enum.CqCodeType">
+            <summary>
+            表示酷Q消息中内含 [CQ:...] 中的类型
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.CqCodeType.Unknown">
+            <summary>
+            位置类型, 同时也是默认值
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.CqCodeType.Face">
+            <summary>
+            QQ表情
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.CqCodeType.Emoji">
+            <summary>
+            Emoji表情
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.CqCodeType.Bface">
+            <summary>
+            原创表情
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.CqCodeType.Sface">
+            <summary>
+            小表情
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.CqCodeType.Image">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.CqCodeType.Record">
+            <summary>
+            语音
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.CqCodeType.At">
+            <summary>
+            At默认
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.CqCodeType.Rps">
+            <summary>
+            猜拳魔法表情
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.CqCodeType.Dice">
+            <summary>
+            掷骰子魔法表情
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.CqCodeType.Shake">
+            <summary>
+            戳一戳
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.CqCodeType.Music">
+            <summary>
+            音乐
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.CqCodeType.Share">
+            <summary>
+            链接分享
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.CqCodeType.Rich">
+            <summary>
+            卡片消息
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.CqCodeType.Sign">
+            <summary>
+            签到
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.CqCodeType.Hb">
+            <summary>
+            红包
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.CqCodeType.Contact">
+            <summary>
+            推荐
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.CqCodeType.Show">
+            <summary>
+            厘米秀
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.CqCodeType.Location">
+            <summary>
+            位置分享
+            </summary>
+        </member>
+        <member name="T:Native.Csharp.Sdk.Cqp.Enum.Face">
+            <summary>
+            指示酷Q表情代码
+            </summary>
+        </member>
+        <member name="T:Native.Csharp.Sdk.Cqp.Enum.FloatWindowColors">
+            <summary>
+            指示浮悬窗颜色
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.FloatWindowColors.Green">
+            <summary>
+            绿色
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.FloatWindowColors.Orange">
+            <summary>
+            橙色
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.FloatWindowColors.Red">
+            <summary>
+            红色
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.FloatWindowColors.Crimson">
+            <summary>
+            深红色
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.FloatWindowColors.Black">
+            <summary>
+            黑色
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.FloatWindowColors.Gray">
+            <summary>
+            灰色
+            </summary>
+        </member>
+        <member name="T:Native.Csharp.Sdk.Cqp.Enum.LogerLevel">
+            <summary>
+            日志等级
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.LogerLevel.Debug">
+            <summary>
+            调试
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.LogerLevel.Info">
+            <summary>
+            信息
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.LogerLevel.Info_Success">
+            <summary>
+            信息_成功
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.LogerLevel.Info_Receive">
+            <summary>
+            信息_接收
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.LogerLevel.Info_Send">
+            <summary>
+            信息_发送
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.LogerLevel.Warning">
+            <summary>
+            警告
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.LogerLevel.Error">
+            <summary>
+            错误
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.LogerLevel.Fatal">
+            <summary>
+            严重错误
+            </summary>
+        </member>
+        <member name="T:Native.Csharp.Sdk.Cqp.Enum.MessageHanding">
+            <summary>
+            消息的处理方式
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.MessageHanding.Ignored">
+            <summary>
+            忽略消息
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.MessageHanding.Intercept">
+            <summary>
+            拦截消息
+            </summary>
+        </member>
+        <member name="T:Native.Csharp.Sdk.Cqp.Enum.PermitType">
+            <summary>
+            权限类型
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.PermitType.None">
+            <summary>
+            成员
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.PermitType.Manage">
+            <summary>
+            管理
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.PermitType.Holder">
+            <summary>
+            群主
+            </summary>
+        </member>
+        <member name="T:Native.Csharp.Sdk.Cqp.Enum.RequestType">
+            <summary>
+            请求类型
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.RequestType.GroupAdd">
+            <summary>
+            请求_群添加
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.RequestType.GroupInvitation">
+            <summary>
+            请求_群邀请
+            </summary>
+        </member>
+        <member name="T:Native.Csharp.Sdk.Cqp.Enum.ResponseType">
+            <summary>
+            请求反馈类型
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.ResponseType.PASS">
+            <summary>
+            通过
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.ResponseType.FAIL">
+            <summary>
+            不通过
+            </summary>
+        </member>
+        <member name="T:Native.Csharp.Sdk.Cqp.Enum.Sex">
+            <summary>
+            表示性别的枚举
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.Sex.Man">
+            <summary>
+            男性
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.Sex.Woman">
+            <summary>
+            女性 
+            </summary>
+        </member>
+        <member name="F:Native.Csharp.Sdk.Cqp.Enum.Sex.Unknown">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="T:Native.Csharp.Sdk.Cqp.Model.CqCode">
+            <summary>
+            描述 酷Q 消息中一串 [CQ:...] 的对象
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.CqCode.OriginalString">
+            <summary>
+            获取或设置一个值, 指示当前实例的原始字符串
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.CqCode.Index">
+            <summary>
+            获取或设置一个值, 指示当前实例位于消息上下文的起始索引
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.CqCode.Type">
+            <summary>
+            获取一个值, 该值指示当前实例所表示的 CQ码 的类型
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.CqCode.Dictionary">
+            <summary>
+            获取一个值, 指示该 CQ码 中所有的键值对
+            </summary>
+        </member>
+        <member name="T:Native.Csharp.Sdk.Cqp.Model.FloatWindow">
+            <summary>
+            浮悬窗
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.FloatWindow.Data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.FloatWindow.Unit">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.FloatWindow.Color">
+            <summary>
+            颜色
+            </summary>
+        </member>
+        <member name="T:Native.Csharp.Sdk.Cqp.Model.Group">
+            <summary>
+            群信息
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.Group.Id">
+            <summary>
+            群号码
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.Group.Name">
+            <summary>
+            群名字
+            </summary>
+        </member>
+        <member name="T:Native.Csharp.Sdk.Cqp.Model.GroupAnonymous">
+            <summary>
+            群匿名
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.GroupAnonymous.Id">
+            <summary>
+            匿名用户标识
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.GroupAnonymous.CodeName">
+            <summary>
+            代号
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.GroupAnonymous.Token">
+            <summary>
+            令牌
+            </summary>
+        </member>
+        <member name="T:Native.Csharp.Sdk.Cqp.Model.GroupFile">
+            <summary>
+            群文件
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.GroupFile.Name">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.GroupFile.Id">
+            <summary>
+            文件Id
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.GroupFile.Busid">
+            <summary>
+            Busid
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.GroupFile.Size">
+            <summary>
+            大小
+            </summary>
+        </member>
+        <member name="T:Native.Csharp.Sdk.Cqp.Model.GroupMember">
+            <summary>
+            群成员信息
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.GroupMember.GroupId">
+            <summary>
+            获取或设置一个值, 指示成员所在群
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.GroupMember.QQId">
+            <summary>
+            获取或设置一个值, 指示成员QQ
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.GroupMember.Nick">
+            <summary>
+            获取或设置一个值, 指示成员昵称
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.GroupMember.Card">
+            <summary>
+            获取或设置一个值, 指示成员群名片
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.GroupMember.Sex">
+            <summary>
+            获取或设置一个值, 指示成员性别
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.GroupMember.Age">
+            <summary>
+            获取或设置一个值, 指示成员年龄
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.GroupMember.Area">
+            <summary>
+            获取或设置一个值, 指示成员所在地区
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.GroupMember.JoiningTime">
+            <summary>
+            获取或设置一个值, 指示成员入群的时间
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.GroupMember.LastDateTime">
+            <summary>
+            获取或设置一个值, 指示成员最后发言时间
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.GroupMember.Level">
+            <summary>
+            获取或设置一个值, 指示成员等级的名称
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.GroupMember.PermitType">
+            <summary>
+            获取或设置一个值, 指示成员在此群的权限
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.GroupMember.SpecialTitle">
+            <summary>
+            获取或设置一个值, 指示成员在此群获得的专属头衔
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.GroupMember.SpecialTitleDurationTime">
+            <summary>
+            获取或设置一个值, 指示成员在此群的专属头衔过期时间, 若过期时间换算的秒数为 "-1" 则为无期限
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.GroupMember.BadRecord">
+            <summary>
+            获取或设置一个值, 指示成员是否为不良记录成员
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.GroupMember.CanModifiedCard">
+            <summary>
+            获取或设置一个值, 指示成员是否被允许修改群名片
+            </summary>
+        </member>
+        <member name="T:Native.Csharp.Sdk.Cqp.Model.QQInfo">
+            <summary>
+            QQ信息
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.QQInfo.Id">
+            <summary>
+            QQ号
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.QQInfo.Sex">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.QQInfo.Age">
+            <summary>
+            年龄
+            </summary>
+        </member>
+        <member name="P:Native.Csharp.Sdk.Cqp.Model.QQInfo.Nick">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="T:Native.Csharp.Sdk.Cqp.Other.BinaryReaderExpand">
+            <summary>
+            <see cref="T:System.IO.BinaryReader"/> 类的扩展方法集
+            </summary>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.Other.BinaryReaderExpand.Length(System.IO.BinaryReader)">
+            <summary>
+            获取基础流的剩余长度
+            </summary>
+            <param name="binary"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.Other.BinaryReaderExpand.ReadAll_Ex(System.IO.BinaryReader)">
+            <summary>
+            从字节数组中的指定点开始，从流中读取所有字节。
+            </summary>
+            <param name="binary">基础 <see cref="T:System.IO.BinaryWriter"/> 对象</param>
+            <returns>读入 buffer 的字节数。 如果可用的字节没有请求的那么多，此数可能小于所请求的字节数；如果到达了流的末尾，此数可能为零。</returns>
+            <exception cref="T:System.ObjectDisposedException">流已关闭。</exception>
+            <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.Other.BinaryReaderExpand.ReadBin_Ex(System.IO.BinaryReader,System.Int64)">
+            <summary>
+            从字节数组中的指定点开始，从流中读取指定字节长度。
+            </summary>
+            <param name="binary">基础 <see cref="T:System.IO.BinaryWriter"/> 对象</param>
+            <param name="len">要读取的字节数。</param>
+            <returns>读入 buffer 的字节数。 如果可用的字节没有请求的那么多，此数可能小于所请求的字节数；如果到达了流的末尾，此数可能为零。</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">len 为负数。</exception>
+            <exception cref="T:System.ArgumentException">已解码要读取的字符数超过了边界。</exception>
+            <exception cref="T:System.ObjectDisposedException">流已关闭。</exception>
+            <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.Other.BinaryReaderExpand.ReadInt16_Ex(System.IO.BinaryReader)">
+            <summary>
+            从字节数组中的指定点开始，从流中读取 2 字节长度并反序为 <see cref="T:System.Int32"/> 值。
+            </summary>
+            <param name="binary">基础 <see cref="T:System.IO.BinaryWriter"/> 对象</param>
+            <returns>读入 2 字节的结果值，如果可用的字节没有那么多，此数可能小于所请求的字节数；如果到达了流的末尾，此数可能为零。</returns>
+            <exception cref="T:System.ArgumentException">已解码要读取的字符数超过了边界。</exception>
+            <exception cref="T:System.ObjectDisposedException">流已关闭。</exception>
+            <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.Other.BinaryReaderExpand.ReadInt32_Ex(System.IO.BinaryReader)">
+            <summary>
+            从字节数组中的指定点开始，从流中读取 4 字节长度并反序为 <see cref="T:System.Int32"/> 值。
+            </summary>
+            <param name="binary">基础 <see cref="T:System.IO.BinaryWriter"/> 对象</param>
+            <returns>读入 4 字节的结果值，如果可用的字节没有那么多，此数可能小于所请求的字节数；如果到达了流的末尾，此数可能为零。</returns>
+            <exception cref="T:System.ArgumentException">已解码要读取的字符数超过了边界。</exception>
+            <exception cref="T:System.ObjectDisposedException">流已关闭。</exception>
+            <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.Other.BinaryReaderExpand.ReadInt64_Ex(System.IO.BinaryReader)">
+            <summary>
+            从字节数组中的指定点开始，从流中读取 8 字节长度并反序为 <see cref="T:System.Int64"/> 值。
+            </summary>
+            <param name="binary">基础 <see cref="T:System.IO.BinaryWriter"/> 对象</param>
+            <returns>读入 8 字节的结果值，如果可用的字节没有那么多，此数可能小于所请求的字节数；如果到达了流的末尾，此数可能为零。</returns>
+            <exception cref="T:System.ArgumentException">已解码要读取的字符数超过了边界。</exception>
+            <exception cref="T:System.ObjectDisposedException">流已关闭。</exception>
+            <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.Other.BinaryReaderExpand.ReadToken_Ex(System.IO.BinaryReader)">
+            <summary>
+            从字节数组中的指定点开始，从流中读取指定字节长度。
+            </summary>
+            <param name="binary">基础 <see cref="T:System.IO.BinaryWriter"/> 对象</param>
+            <returns>读入 buffer 的字节数。 如果可用的字节没有请求的那么多，此数可能小于所请求的字节数；如果到达了流的末尾，此数可能为零。</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">len 为负数。</exception>
+            <exception cref="T:System.ArgumentException">已解码要读取的字符数超过了边界。</exception>
+            <exception cref="T:System.ObjectDisposedException">流已关闭。</exception>
+            <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.Other.BinaryReaderExpand.ReadString_Ex(System.IO.BinaryReader,System.Text.Encoding)">
+            <summary>
+            从字节数组中的指定点开始，从流中读取指定编码的字符串。
+            </summary>
+            <param name="binary">基础 <see cref="T:System.IO.BinaryWriter"/> 对象</param>
+            <param name="encoding"></param>
+            <returns>读入 buffer 的字节数。 如果可用的字节没有请求的那么多，此数可能小于所请求的字节数；如果到达了流的末尾，此数可能为零。</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">len 为负数。</exception>
+            <exception cref="T:System.ArgumentException">已解码要读取的字符数超过了边界。</exception>
+            <exception cref="T:System.ObjectDisposedException">流已关闭。</exception>
+            <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
+        </member>
+        <member name="T:Native.Csharp.Sdk.Cqp.Other.BinaryWriterExpand">
+            <summary>
+            <see cref="T:System.IO.BinaryReader"/> 类的扩展方法集
+            </summary>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.Other.BinaryWriterExpand.Write_Ex(System.IO.BinaryWriter,System.Int16)">
+            <summary>
+            将写入基础流的 <see cref="T:System.Int16"/> 数值
+            </summary>
+            <param name="binary">基础 <see cref="T:System.IO.BinaryWriter"/> 对象</param>
+            <param name="value">要写入的值</param>
+            <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
+            <exception cref="T:System.ObjectDisposedException">流已关闭。</exception>
+            <exception cref="T:System.ArgumentNullException">buffer 为 null。</exception>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.Other.BinaryWriterExpand.Write_Ex(System.IO.BinaryWriter,System.Int32)">
+            <summary>
+            将写入基础流的 <see cref="T:System.Int32"/> 数值
+            </summary>
+            <param name="binary">基础 <see cref="T:System.IO.BinaryWriter"/> 对象</param>
+            <param name="value">要写入的值</param>
+            <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
+            <exception cref="T:System.ObjectDisposedException">流已关闭。</exception>
+            <exception cref="T:System.ArgumentNullException">buffer 为 null。</exception>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.Other.BinaryWriterExpand.Write_Ex(System.IO.BinaryWriter,System.Int64)">
+            <summary>
+            将写入基础流的 <see cref="T:System.Int64"/> 数值
+            </summary>
+            <param name="binary">基础 <see cref="T:System.IO.BinaryWriter"/> 对象</param>
+            <param name="value">要写入的值</param>
+            <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
+            <exception cref="T:System.ObjectDisposedException">流已关闭。</exception>
+            <exception cref="T:System.ArgumentNullException">buffer 为 null。</exception>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.Other.BinaryWriterExpand.Write_Ex(System.IO.BinaryWriter,System.String)">
+            <summary>
+            将写入基础流的 <see cref="T:System.String"/> 数值
+            </summary>
+            <param name="binary">基础 <see cref="T:System.IO.BinaryWriter"/> 对象</param>
+            <param name="value">要写入的值</param>
+            <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
+            <exception cref="T:System.ObjectDisposedException">流已关闭。</exception>
+            <exception cref="T:System.ArgumentNullException">buffer 为 null。</exception>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.Other.BinaryWriterExpand.ToArray(System.IO.BinaryWriter)">
+            <summary>
+            将基础流转换为相同的字节数组
+            </summary>
+            <param name="binary">基础 <see cref="T:System.IO.BinaryWriter"/> 对象</param>
+        </member>
+        <member name="T:Native.Csharp.Sdk.Cqp.Other.OtherExpand">
+            <summary>
+            其它类扩展方法集
+            </summary>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.Other.OtherExpand.ToDateTime(System.Int32)">
+            <summary>
+            获取 Unix 时间戳的 <see cref="T:System.DateTime"/> 表示形式
+            </summary>
+            <param name="unixTime">unix 时间戳</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.Other.OtherExpand.GetStringGCHandle(System.String,System.Text.Encoding)">
+            <summary>
+            获取当前对象的 <see cref="T:System.Runtime.InteropServices.GCHandle"/> 实例, 该实例为 <see cref="F:System.Runtime.InteropServices.GCHandleType.Pinned"/> 类型
+            </summary>
+            <param name="source">将转换的对象</param>
+            <param name="encoding">转换的编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.Other.OtherExpand.ToString(System.IntPtr,System.Text.Encoding)">
+            <summary>
+            读取指针内所有的字节数组并编码为指定字符串
+            </summary>
+            <param name="strPtr">字符串的 <see cref="T:System.IntPtr"/> 对象</param>
+            <param name="encoding">目标编码格式</param>
+            <returns></returns>
+        </member>
+        <member name="M:Native.Csharp.Sdk.Cqp.Other.OtherExpand.GetDescription(System.Enum)">
+            <summary>
+            读取 <see cref="T:System.Enum"/> 标记 <see cref="T:System.ComponentModel.DescriptionAttribute"/> 的值
+            </summary>
+            <param name="value">原始 <see cref="T:System.Enum"/> 值</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
